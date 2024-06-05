@@ -12,7 +12,7 @@
         </a>
       </div>
       <nav class="ml-auto space-x-4 flex items-center h-10 sm:space-x-6">
-        <router-link to="/"> Home</router-link>
+        <router-link :to="{ name:'home' }"> Home</router-link>
         <router-link to="/features"> Features</router-link>
         <router-link to="/pricing"> Pricing</router-link>
         <router-link to="/contact"> Contact</router-link>
@@ -21,7 +21,7 @@
     <!-- Fin Header -->
 
     <!-- Main -->
-    <main class="flex-1 flex items-center justify-center py-6">
+    <main class="flex-1 flex items-center justify-center ">
       <router-view></router-view>
     </main>
     <!-- Fin Main -->
