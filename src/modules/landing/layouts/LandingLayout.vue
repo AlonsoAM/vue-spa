@@ -11,11 +11,17 @@
           <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="40" height="40" />
         </a>
       </div>
-      <nav class="ml-auto space-x-4 flex items-center h-10 sm:space-x-6">
-        <router-link :to="{ name:'home' }"> Home</router-link>
-        <router-link to="/features"> Features</router-link>
-        <router-link to="/pricing"> Pricing</router-link>
-        <router-link to="/contact"> Contact</router-link>
+      <nav class="ml-auto space-x-4 flex flex-col items-end h-10 sm:space-x-6">
+        <div class="space-x-4" >
+          <router-link :to="{ name:'home' }"> Home</router-link>
+          <router-link to="/features"> Features</router-link>
+          <router-link to="/pricing"> Pricing</router-link>
+          <router-link to="/contact"> Contact</router-link>
+        </div>
+        <div class="space-x-4" >
+          <router-link to="/auth"> Login</router-link>
+          <router-link to="/pokemon/1"> Pokemon</router-link>
+        </div>
       </nav>
     </header>
     <!-- Fin Header -->

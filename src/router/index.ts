@@ -28,6 +28,15 @@ const router = createRouter({
           path: 'contact',
           name: 'contact',
           component: () => import('@/modules/landing/pages/ContactPage.vue')
+        },
+        {
+          path: 'pokemon/:id',
+          name: 'pokemon',
+          props: (route) => {
+            const id = Number(route.params.id)
+            return isNaN(id) ? { id: 1 } : { id }
+          },
+          component: () => import('@/modules/pokemon/pages/PokemonPage.vue')
         }
       ]
     },
@@ -51,6 +60,12 @@ const router = createRouter({
           component: () => import('@/modules/auth/pages/RegisterPage.vue')
         }
       ]
+    },
+    // 404 - Not found
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/modules/common/pages/NotFound404.vue')
     }
   ]
 })
