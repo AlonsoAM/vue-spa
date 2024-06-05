@@ -1,5 +1,15 @@
 <script setup lang="ts">
 
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const onLogin = () => {
+
+  localStorage.setItem('userID', '1')
+
+  router.replace({ name: 'home' })
+}
 </script>
 
 <template>
@@ -30,7 +40,8 @@
       <a href="#" class="hover:underline">Forgot Password?</a>
     </div>
     <!-- Login Button -->
-    <button type="submit"
+    <button type="button"
+            @click="onLogin"
             class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login
     </button>
   </form>
