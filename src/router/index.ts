@@ -1,5 +1,6 @@
 import HomePage from '@/modules/landing/pages/HomePage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import isAuthenticateGuard from '@/modules/auth/guards/is-authenticate.guard'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,7 @@ const router = createRouter({
         {
           path: 'pokemon/:id',
           name: 'pokemon',
+          beforeEnter: [isAuthenticateGuard],
           props: (route) => {
             const id = Number(route.params.id)
             return isNaN(id) ? { id: 1 } : { id }

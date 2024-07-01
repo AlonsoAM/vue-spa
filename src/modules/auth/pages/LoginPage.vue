@@ -8,7 +8,9 @@ const onLogin = () => {
 
   localStorage.setItem('userID', '1')
 
-  router.replace({ name: 'home' })
+  const lastPath = localStorage.getItem('lastLocation') ?? '/'
+
+  router.replace(lastPath)
 }
 </script>
 
